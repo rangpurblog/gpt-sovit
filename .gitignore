@@ -9,6 +9,7 @@ output
 outputs/
 voices/
 *.wav
+jobs/
 logs
 SoVITS_weights*/
 GPT_weights*/
