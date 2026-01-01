@@ -1,0 +1,6 @@
+{
+  "user_id": "user_001",
+  "voice_name": "test_voice",
+  "ref_wav": "voices\\user_001\\test_voice\\ref.wav",
+  "public": false
+}
