@@ -6,6 +6,9 @@ env
 runtime
 .idea
 output
+outputs/
+voices/
+*.wav
 logs
 SoVITS_weights*/
 GPT_weights*/

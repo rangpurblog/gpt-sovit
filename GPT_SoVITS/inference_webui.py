@@ -1344,7 +1344,11 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
         # gr.Markdown(html_center(i18n("后续将支持转音素、手工修改音素、语音合成分步执行。")))
 
 if __name__ == "__main__":
-    app.queue().launch(  # concurrency_count=511, max_size=1022
+    # টাইমআউট সেটিংস: কোনো লিমিট নেই, লম্বা টেক্সটের জন্য
+    app.queue(
+        max_size=None,                  # No limit on queue size
+        default_concurrency_limit=None, # No concurrency limit
+    ).launch(
         server_name="0.0.0.0",
         inbrowser=True,
         share=is_share,

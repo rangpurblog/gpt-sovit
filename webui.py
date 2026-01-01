@@ -1972,10 +1972,13 @@ with gr.Blocks(title="GPT-SoVITS WebUI", analytics_enabled=False, js=js, css=css
         with gr.TabItem(i18n("2-GPT-SoVITS-变声")):
             gr.Markdown(value=i18n("施工中，请静候佳音"))
 
-    app.queue().launch(  # concurrency_count=511, max_size=1022
-        server_name="0.0.0.0",
-        inbrowser=True,
-        share=is_share,
-        server_port=webui_port_main,
-        # quiet=True,
+    app.queue(
+        max_size=None,                  # No limit on queue size
+        default_concurrency_limit=None, # No concurrency limit
+    ).launch(
+        server_name="0.0.0.0",
+        inbrowser=True,
+        share=is_share,
+        server_port=webui_port_main,
+        # quiet=True,
     )

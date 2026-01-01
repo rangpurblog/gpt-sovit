@@ -211,4 +211,13 @@ def admin_stats():
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8001)
+    # টাইমআউট সেটিংস: কোনো লিমিট নেই, লম্বা টেক্সটের জন্য
+    uvicorn.run(
+        app, 
+        host="0.0.0.0", 
+        port=8001,
+        timeout_keep_alive=0,           # Keep-alive timeout disabled
+        timeout_graceful_shutdown=None, # No graceful shutdown timeout
+        limit_concurrency=None,         # No concurrency limit
+        backlog=2048                    # Increase backlog for better handling
+    )
